@@ -5,7 +5,7 @@
 
 class Node {
 public:
-    Goat data; // Change from int to Goat
+    Goat data; 
     Node* next;
     Node* prev;
 
@@ -25,4 +25,4 @@ public:
     void printBackward() const;
 };
 
-#endif // DOUBLY_LINKED_LIST_H
+#endif 
