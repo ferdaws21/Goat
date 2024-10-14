@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Goat {
+class GOAT {
 private:
     int age;
     string name;
