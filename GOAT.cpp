@@ -1,12 +1,13 @@
 #include "GOAT.h"
 #include <iostream>
-#include <ctime>
+#include <cstdlib> // For rand()
 
+// Define static members
 const std::string Goat::names[15] = { "Billy", "Nanny", "Daisy", "Ginger", "Luna", "Marley", "Oscar", "Pepper", "Rocky", "Socks", "Teddy", "Willow", "Zoe", "Coco", "Bella" };
 const std::string Goat::colors[15] = { "White", "Black", "Brown", "Spotted", "Gray", "Golden", "Red", "Yellow", "Cream", "Tan", "Mauve", "Blue", "Green", "Purple", "Pink" };
 
 Goat::Goat() {
-    age = rand() % 20 + 1; // Random age from 1 to 20
+    age = rand() % 10 + 1; // Random age between 1 and 10
     name = names[rand() % 15]; // Random name
     color = colors[rand() % 15]; // Random color
 }
