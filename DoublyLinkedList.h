@@ -22,8 +22,8 @@ public:
 
     void push_front(Goat goat);
     void push_back(Goat goat);
-    void printForward() const;
-    void printBackward() const;
+    void printForward() const;  // Ensure the names match
+    void printBackward() const;  // Ensure the names match
 };
 
 #endif // DOUBLYLINKEDLIST_H
