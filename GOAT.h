@@ -4,20 +4,16 @@
 #include <string>
 using namespace std;
 
-class Goat {
+class GOAT {
 private:
     int age;
     string name;
     string color;
 
 public:
-    
-    Goat(string n, string c, int a) : name(n), color(c), age(a) {}
-
-    
-    string getName() const { return name; }
-    string getColor() const { return color; }
-    int getAge() const { return age; }
+    Goat(string n, string c, int a); // Parameterized constructor
+    string getColor() const;          // Ensure this is declared
+    void print() const;                // Ensure this is declared
 };
 
-#endif
+#endif // GOAT_H
