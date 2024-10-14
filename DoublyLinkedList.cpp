@@ -7,6 +7,8 @@ DoublyLinkedList::~DoublyLinkedList() {
     // Destructor implementation
 }
 
+DoublyLinkedList::Node::Node(Goat d) : data(d), next(nullptr), prev(nullptr) {}
+
 void DoublyLinkedList::push_front(Goat goat) {
     // Implementation
 }
@@ -15,7 +17,7 @@ void DoublyLinkedList::push_back(Goat goat) {
     // Implementation
 }
 
-void DoublyLinkedList::printForward() const { // Ensure function names match
+void DoublyLinkedList::printForward() const {
     if (!head) {
         std::cout << "List is empty." << std::endl;
         return;
@@ -27,7 +29,7 @@ void DoublyLinkedList::printForward() const { // Ensure function names match
     }
 }
 
-void DoublyLinkedList::printBackward() const { // Ensure function names match
+void DoublyLinkedList::printBackward() const {
     if (!tail) {
         std::cout << "List is empty." << std::endl;
         return;
