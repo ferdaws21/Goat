@@ -2,7 +2,8 @@
 #define GOAT_H
 
 #include <string>
-#include <cstdlib>
+#include <iostream>
+#include <cstdlib> // for rand()
 
 class Goat {
 private:
@@ -10,13 +11,12 @@ private:
     std::string name;
     std::string color;
 
-    // Declare static members
     static const std::string names[15];
     static const std::string colors[15];
 
 public:
-    Goat(); // Default constructor
-    Goat(int a, std::string n, std::string c); // Parameterized constructor
+    Goat();
+    Goat(int a, std::string n, std::string c);
 
     int getAge() const;
     std::string getName() const;
