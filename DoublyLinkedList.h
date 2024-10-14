@@ -6,7 +6,7 @@
 class DoublyLinkedList {
 private:
     struct Node {
-        Goat data;
+        Goat data; // Node data type changed to Goat
         Node* next;
         Node* prev;
 
@@ -20,10 +20,10 @@ public:
     DoublyLinkedList();
     ~DoublyLinkedList();
 
-    void push_front(Goat goat);
-    void push_back(Goat goat);
-    void printForward() const;  // Ensure the names match
-    void printBackward() const;  // Ensure the names match
+    void push_front(Goat goat); // Ensure function names match
+    void push_back(Goat goat);  // Ensure function names match
+    void printForward() const;  // Ensure function names match
+    void printBackward() const;  // Ensure function names match
 };
 
 #endif // DOUBLYLINKEDLIST_H
