@@ -1,4 +1,4 @@
-#include "FerdawsAlamyar_DoublyLinkedList.h"
+#include "DoublyLinkedList.h"
 #include <iostream>
 
 Node::Node(Goat d) : data(d), next(nullptr), prev(nullptr) {}
