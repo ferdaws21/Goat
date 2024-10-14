@@ -10,6 +10,10 @@ private:
     std::string name;
     std::string color;
 
+    // Declare static members
+    static const std::string names[15];
+    static const std::string colors[15];
+
 public:
     Goat(); // Default constructor
     Goat(int a, std::string n, std::string c); // Parameterized constructor
