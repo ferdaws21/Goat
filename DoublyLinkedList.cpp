@@ -1,28 +1,32 @@
 #include "DoublyLinkedList.h"
 #include <iostream>
 
-DoublyLinkedList::DoublyLinkedList() : head(nullptr), tail(nullptr) {}
-
 DoublyLinkedList::~DoublyLinkedList() {
-    // Destructor implementation
-}
-
-DoublyLinkedList::Node::Node(Goat d) : data(d), next(nullptr), prev(nullptr) {}
-
-void DoublyLinkedList::push_front(Goat goat) {
-    // Implementation
+    while (head) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+    }
 }
 
 void DoublyLinkedList::push_back(Goat goat) {
-    // Implementation
+    Node* newNode = new Node(goat);
+    if (!head) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        tail->next = newNode;
+        newNode->prev = tail;
+        tail = newNode;
+    }
 }
 
 void DoublyLinkedList::printForward() const {
-    if (!head) {
+    Node* current = head;
+    if (!current) {
         std::cout << "List is empty." << std::endl;
         return;
     }
-    Node* current = head;
     while (current) {
         current->data.print();
         current = current->next;
@@ -30,11 +34,11 @@ void DoublyLinkedList::printForward() const {
 }
 
 void DoublyLinkedList::printBackward() const {
-    if (!tail) {
+    Node* current = tail;
+    if (!current) {
         std::cout << "List is empty." << std::endl;
         return;
     }
-    Node* current = tail;
     while (current) {
         current->data.print();
         current = current->prev;
