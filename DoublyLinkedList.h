@@ -3,27 +3,26 @@
 
 #include "GOAT.h"
 
+class Node {
+public:
+    Goat data; // Store Goat object instead of int
+    Node* next;
+    Node* prev;
+
+    Node(Goat d) : data(d), next(nullptr), prev(nullptr) {}
+};
+
 class DoublyLinkedList {
 private:
-    struct Node {
-        Goat data; // Node data type changed to Goat
-        Node* next;
-        Node* prev;
-
-        Node(Goat d);
-    };
-
     Node* head;
     Node* tail;
 
 public:
-    DoublyLinkedList();
-    ~DoublyLinkedList();
-
-    void push_front(Goat goat); // Ensure function names match
-    void push_back(Goat goat);  // Ensure function names match
-    void printForward() const;  // Ensure function names match
-    void printBackward() const;  // Ensure function names match
+    DoublyLinkedList() : head(nullptr), tail(nullptr) {}
+    ~DoublyLinkedList(); // Destructor
+    void push_back(Goat goat); // Push back method
+    void printForward() const;
+    void printBackward() const;
 };
 
 #endif // DOUBLYLINKEDLIST_H
