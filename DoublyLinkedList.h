@@ -1,7 +1,7 @@
 #ifndef DOUBLY_LINKED_LIST_H
 #define DOUBLY_LINKED_LIST_H
 
-#include "FerdawsAlamyar_Goat.h"
+#include "GOAT.h"
 
 class Node {
 public:
