@@ -10,7 +10,7 @@ private:
     int age;
     std::string name;
     std::string color;
-    
+
     static const std::string names[15]; // Declare name array
     static const std::string colors[15]; // Declare color array
 
