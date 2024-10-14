@@ -4,22 +4,21 @@
 #include "DoublyLinkedList.h"
 
 int main() {
-    srand(time(0)); // Seed the random number generator
+    srand(time(0)); // Seed for random number generation
 
     DoublyLinkedList goatList;
 
-    // Create a random number of Goat objects (5 to 20)
-    int numberOfGoats = rand() % 16 + 5; // 5 to 20
-    for (int i = 0; i < numberOfGoats; ++i) {
-        Goat g; // Create a random Goat
-        goatList.push_back(g); // Add to the list
+    int numGoats = rand() % 16 + 5; // Random number between 5 and 20
+    for (int i = 0; i < numGoats; ++i) {
+        Goat goat; // Create a random Goat
+        goatList.push_back(goat); // Add the Goat to the list
     }
 
-    std::cout << "Forward traversal:\n";
-    goatList.print_forward();
-
-    std::cout << "\nBackward traversal:\n";
-    goatList.print_backward();
+    std::cout << "Forward Traversal:" << std::endl;
+    goatList.printForward();
+    
+    std::cout << "Backward Traversal:" << std::endl;
+    goatList.printBackward();
 
     return 0;
 }
