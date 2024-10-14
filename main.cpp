@@ -1,25 +1,27 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include "DoublyLinkedList.h"
+#include "GOAT.h"             // Include your Goat class header
+#include "DoublyLinkedList.h"  // Include your DoublyLinkedList class header
+#include <cstdlib>             // For srand() and rand()
+#include <ctime>               // For time()
+
+using namespace std;
 
 int main() {
     srand(time(0)); // Seed the random number generator
 
-    DoublyLinkedList goatList;
+    DoublyLinkedList goatList; // Create a DoublyLinkedList of Goat objects
     int numGoats = rand() % 16 + 5; // Random number of goats between 5 and 20
 
-    // Append random Goat objects to the list
     for (int i = 0; i < numGoats; ++i) {
-        goatList.push_back(Goat()); // Using default constructor
+        Goat goat; // Create a random Goat
+        goatList.push_back(goat); // Add the Goat to the list
     }
 
-    // Print the list forward and backward
-    std::cout << "Forward: " << std::endl;
-    goatList.printForward();
+    cout << "Forward: " << endl;
+    goatList.printForward(); // Print the list forward
 
-    std::cout << "Backward: " << std::endl;
-    goatList.printBackward();
+    cout << "Backward: " << endl;
+    goatList.printBackward(); // Print the list backward
 
     return 0;
 }
