@@ -3,56 +3,38 @@
 
 DoublyLinkedList::DoublyLinkedList() : head(nullptr), tail(nullptr) {}
 
-void DoublyLinkedList::push_front(Goat g) {
-    Node* newNode = new Node(g);
-    if (!head) {
-        head = tail = newNode;
-    } else {
-        newNode->next = head;
-        head->prev = newNode;
-        head = newNode;
-    }
+DoublyLinkedList::~DoublyLinkedList() {
+    // Destructor implementation
 }
 
-void DoublyLinkedList::push_back(Goat g) {
-    Node* newNode = new Node(g);
-    if (!tail) {
-        head = tail = newNode;
-    } else {
-        tail->next = newNode;
-        newNode->prev = tail;
-        tail = newNode;
-    }
+void DoublyLinkedList::push_front(Goat goat) {
+    // Implementation
 }
 
-void DoublyLinkedList::print_forward() const {
+void DoublyLinkedList::push_back(Goat goat) {
+    // Implementation
+}
+
+void DoublyLinkedList::printForward() const { // Ensure function names match
     if (!head) {
-        std::cout << "List is empty\n";
+        std::cout << "List is empty." << std::endl;
         return;
     }
     Node* current = head;
     while (current) {
-        current->data.display();
+        current->data.print();
         current = current->next;
     }
 }
 
-void DoublyLinkedList::print_backward() const {
+void DoublyLinkedList::printBackward() const { // Ensure function names match
     if (!tail) {
-        std::cout << "List is empty\n";
+        std::cout << "List is empty." << std::endl;
         return;
     }
     Node* current = tail;
     while (current) {
-        current->data.display();
+        current->data.print();
         current = current->prev;
-    }
-}
-
-DoublyLinkedList::~DoublyLinkedList() {
-    while (head) {
-        Node* temp = head;
-        head = head->next;
-        delete temp;
     }
 }
