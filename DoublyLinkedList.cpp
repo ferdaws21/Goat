@@ -1,27 +1,28 @@
-void DoublyLinkedList::printForward() const {
-    if (head == nullptr) {
-        std::cout << "List is empty" << std::endl;
-        return;
-    }
+#ifndef DOUBLY_LINKED_LIST_H
+#define DOUBLY_LINKED_LIST_H
 
-    Node* current = head;
-    std::cout << "Forward: " << std::endl;
-    while (current != nullptr) {
-        std::cout << "    " << current->data.toString() << std::endl;
-        current = current->next;
-    }
-}
+#include "Goat.h"
 
-void DoublyLinkedList::printBackward() const {
-    if (tail == nullptr) {
-        std::cout << "List is empty" << std::endl;
-        return;
-    }
+class Node {
+public:
+    Goat data; // Change from int to Goat
+    Node* next;
+    Node* prev;
 
-    Node* current = tail;
-    std::cout << "Backward: " << std::endl;
-    while (current != nullptr) {
-        std::cout << "    " << current->data.toString() << std::endl;
-        current = current->prev;
-    }
-}
+    Node(Goat d);
+};
+
+class DoublyLinkedList {
+private:
+    Node* head;
+    Node* tail;
+
+public:
+    DoublyLinkedList();
+    void push_front(Goat goat);
+    void push_back(Goat goat);
+    void printForward() const;
+    void printBackward() const;
+};
+
+#endif // DOUBLY_LINKED_LIST_H
