@@ -1,9 +1,7 @@
 #ifndef GOAT_H
 #define GOAT_H
 
-#include <iostream>
 #include <string>
-#include <cstdlib>
 
 class GOAT {
 private:
@@ -11,22 +9,14 @@ private:
     std::string name;
     std::string color;
 
-    static const std::string names[15]; // Declare name array
-    static const std::string colors[15]; // Declare color array
-
 public:
-    // Default constructor
-    Goat();
-    // Parameter constructor
-    Goat(int a, std::string n, std::string c);
+    static const std::string names[15];
+    static const std::string colors[15];
 
-    // Getters for printing
-    int getAge() const;
-    std::string getName() const;
-    std::string getColor() const;
+    Goat(); // Default constructor
+    Goat(int a, std::string n, std::string c); // Parameter constructor
 
-    // Print method for Goat
-    void print() const;
+    void display() const; // Method to display goat info
 };
 
 #endif // GOAT_H
