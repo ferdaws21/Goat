@@ -1,4 +1,4 @@
-#include "FerdawsAlamyar_Goat.h"
+#include "GOAT.h"
 #include <ctime>
 
 const std::string Goat::names[15] = {"Billy", "Nanny", "Daisy", "Ginger", "Luna", "Marley", "Oscar", "Pepper", "Rocky", "Socks", "Teddy", "Willow", "Zoe", "Coco", "Bella"};
