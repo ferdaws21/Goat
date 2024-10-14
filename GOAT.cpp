@@ -1,27 +1,17 @@
 #include "GOAT.h"
-#include <cstdlib>  // For rand() and srand()
-#include <ctime>    // For time()
 
-// Define static data members
-const string Goat::names[15] = {"Billy", "Nanny", "Daisy", "Ginger", "Luna", "Marley", "Oscar", "Pepper", "Rocky", "Socks", "Teddy", "Willow", "Zoe", "Coco", "Bella"};
-const string Goat::colors[15] = {"White", "Black", "Brown", "Spotted", "Gray", "Golden", "Red", "Yellow", "Cream", "Tan", "Mauve", "Blue", "Green", "Purple", "Pink"};
+// Define static members
+const array<string, 15> Goat::names = {"Billy", "Nanny", "Daisy", "Ginger", "Luna", "Marley", "Oscar", "Pepper", "Rocky", "Socks", "Teddy", "Willow", "Zoe", "Coco", "Bella"};
+const array<string, 15> Goat::colors = {"White", "Black", "Brown", "Spotted", "Gray", "Golden", "Red", "Yellow", "Cream", "Tan", "Mauve", "Blue", "Green", "Purple", "Pink"};
 
-// Default constructor
-Goat::Goat() {
-    srand(time(0));  // Seed the random number generator
-    age = rand() % 20 + 1;  // Random age between 1 and 20
-    name = names[rand() % 15];  // Random name from names array
-    color = colors[rand() % 15];  // Random color from colors array
-}
-
-// Parameterized constructor
-Goat::Goat(string n, string c, int a) : name(n), color(c), age(a) {}
-
-// Method definitions
-int Goat::getAge() const { return age; }
-string Goat::getName() const { return name; }
-string Goat::getColor() const { return color; }
+Goat::Goat() : name("Unknown"), color("Unknown"), age(0) {} // Default constructor
 
 void Goat::print() const {
     cout << name << " (" << color << ", " << age << ")" << endl;
+}
+
+// Function to generate a random goat (example implementation)
+Goat Goat::generateRandomGoat() {
+    // Implement random selection logic here
+    return Goat(names[0], colors[0], 1); // Placeholder
 }
