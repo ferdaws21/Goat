@@ -1,11 +1,10 @@
 #include "GOAT.h"
-#include <iostream>
-#include <cstdlib> // For rand()
 
-// Define static members
+// Define the static arrays outside the class definition
 const std::string Goat::names[15] = { "Billy", "Nanny", "Daisy", "Ginger", "Luna", "Marley", "Oscar", "Pepper", "Rocky", "Socks", "Teddy", "Willow", "Zoe", "Coco", "Bella" };
 const std::string Goat::colors[15] = { "White", "Black", "Brown", "Spotted", "Gray", "Golden", "Red", "Yellow", "Cream", "Tan", "Mauve", "Blue", "Green", "Purple", "Pink" };
 
+// Constructor definitions
 Goat::Goat() {
     age = rand() % 10 + 1; // Random age between 1 and 10
     name = names[rand() % 15]; // Random name
