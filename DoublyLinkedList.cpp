@@ -9,7 +9,8 @@ void DoublyLinkedList::push_front(Goat goat) {
     Node* newNode = new Node(goat);
     if (!head) {
         head = tail = newNode;
-    } else {
+    }
+    else {
         newNode->next = head;
         head->prev = newNode;
         head = newNode;
@@ -20,7 +21,8 @@ void DoublyLinkedList::push_back(Goat goat) {
     Node* newNode = new Node(goat);
     if (!tail) {
         head = tail = newNode;
-    } else {
+    }
+    else {
         tail->next = newNode;
         newNode->prev = tail;
         tail = newNode;
