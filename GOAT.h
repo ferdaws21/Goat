@@ -3,29 +3,30 @@
 
 #include <iostream>
 #include <string>
-#include <array>
+#include <cstdlib>
 
-using namespace std;
-
-class Goat {
+class GOAT {
 private:
-    static const array<string, 15> names;
-    static const array<string, 15> colors;
-    string name;
-    string color;
     int age;
+    std::string name;
+    std::string color;
+    
+    static const std::string names[15]; // Declare name array
+    static const std::string colors[15]; // Declare color array
 
 public:
-    Goat(string n, string c, int a) : name(n), color(c), age(a) {} // Constructor
-    Goat(); // Default constructor
+    // Default constructor
+    Goat();
+    // Parameter constructor
+    Goat(int a, std::string n, std::string c);
 
-    int getAge() const { return age; }
-    string getName() const { return name; }
-    string getColor() const { return color; }
+    // Getters for printing
+    int getAge() const;
+    std::string getName() const;
+    std::string getColor() const;
+
+    // Print method for Goat
     void print() const;
-
-    // Additional function to generate random goat
-    static Goat generateRandomGoat();
 };
 
 #endif // GOAT_H
