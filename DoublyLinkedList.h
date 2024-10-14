@@ -1,28 +1,27 @@
-#ifndef DOUBLY_LINKED_LIST_H
-#define DOUBLY_LINKED_LIST_H
+#ifndef DOUBLYLINKEDLIST_H
+#define DOUBLYLINKEDLIST_H
 
 #include "GOAT.h"
 
-class Node {
-public:
-    Goat data; // Change from int to Goat
-    Node* next;
-    Node* prev;
-
-    Node(Goat d);
-};
-
 class DoublyLinkedList {
 private:
+    struct Node {
+        Goat data;
+        Node* next;
+        Node* prev;
+        Node(Goat d) : data(d), next(nullptr), prev(nullptr) {}
+    };
+    
     Node* head;
     Node* tail;
 
 public:
-    DoublyLinkedList();
-    void push_front(Goat goat);
-    void push_back(Goat goat);
-    void printForward() const;
-    void printBackward() const;
+    DoublyLinkedList(); // Constructor
+    void push_front(Goat g); // Push front with Goat
+    void push_back(Goat g); // Push back with Goat
+    void print_forward() const; // Print forward
+    void print_backward() const; // Print backward
+    ~DoublyLinkedList(); // Destructor
 };
 
-#endif // DOUBLY_LINKED_LIST_H
+#endif // DOUBLYLINKEDLIST_H
