@@ -7,7 +7,7 @@ using namespace std;
 int main() {
     DoublyLinkedList goatList;
 
-    // Add goats in the desired order
+    
     goatList.push_back(Goat("Pepper", "White", 15));
     goatList.push_back(Goat("Teddy", "Purple", 20));
     goatList.push_back(Goat("Socks", "Purple", 8));
